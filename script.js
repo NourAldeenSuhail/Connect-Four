@@ -113,7 +113,7 @@ restartButton.addEventListener('click', () => {
     currentPlayer = 'red';
     gameActive = true;
     statusBox.textContent = "Red's Turn";
-    statusBox.style.backgroundColor = 'gray';
+    statusBox.style.backgroundColor = 'goldenrod';
     createBoard();
 });
 
