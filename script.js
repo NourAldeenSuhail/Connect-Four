@@ -16,6 +16,8 @@ function createBoard() {
             cell.dataset.row = row;
             cell.dataset.col = col;
             cell.addEventListener('click', handleCellClick);
+            cell.addEventListener('mouseover', handleCellHover);
+            cell.addEventListener('mouseout', handleCellHoverOut);
             board.appendChild(cell);
         }
     }
@@ -48,6 +50,25 @@ function handleCellClick(event) {
             }
             break;
         }
+    }
+}
+
+function handleCellHover(event) {
+    const col = parseInt(event.target.dataset.col);
+    for (let r = 5; r >= 0; r--) {
+        const cell = document.querySelector(`.cell[data-row="${r}"][data-col="${col}"]`);
+        if (!boardState[r][col]) {
+            cell.classList.add('hover');
+            break;
+        }
+    }
+}
+
+function handleCellHoverOut(event) {
+    const col = parseInt(event.target.dataset.col);
+    for (let r = 5; r >= 0; r--) {
+        const cell = document.querySelector(`.cell[data-row="${r}"][data-col="${col}"]`);
+        cell.classList.remove('hover');
     }
 }
 
