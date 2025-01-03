@@ -36,15 +36,15 @@ function handleCellClick(event) {
             targetCell.classList.add(currentPlayer);
             if (checkWin(r, col)) {
                 gameActive = false;
-                statusBox.textContent = `فاز ${currentPlayer === 'red' ? 'الأحمر' : 'الأصفر'}`;
+                statusBox.textContent = `${currentPlayer === 'red' ? 'Red' : 'Yellow'} Wins!`;
                 statusBox.style.backgroundColor = currentPlayer;
                 updateScore();
             } else if (boardState.flat().every(cell => cell)) {
                 gameActive = false;
-                statusBox.textContent = 'تعادل';
+                statusBox.textContent = 'Draw';
             } else {
                 currentPlayer = currentPlayer === 'red' ? 'yellow' : 'red';
-                statusBox.textContent = `دور ${currentPlayer === 'red' ? 'الأحمر' : 'الأصفر'}`;
+                statusBox.textContent = `${currentPlayer === 'red' ? 'Red' : 'Yellow'}'s Turn`;
             }
             break;
         }
@@ -91,7 +91,7 @@ restartButton.addEventListener('click', () => {
     boardState = Array(6).fill(null).map(() => Array(7).fill(null));
     currentPlayer = 'red';
     gameActive = true;
-    statusBox.textContent = 'دور الأحمر';
+    statusBox.textContent = "Red's Turn";
     statusBox.style.backgroundColor = 'gray';
     createBoard();
 });

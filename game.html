@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أربع تربح</title>
+    <title>Connect Four</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
-        <div class="status-box" id="statusBox">دور الأحمر</div>
+        <div class="status-box" id="statusBox">Red's Turn</div>
         <div class="board" id="board">
-            <!-- Generate cells dynamically using JavaScript -->
+            <!-- Cells will be generated dynamically using JavaScript -->
         </div>
-        <button id="restartButton">إعادة التشغيل</button>
+        <button id="restartButton">Restart</button>
         <div class="scoreboard">
-            <div>الأحمر: <span id="redScore">0</span></div>
-            <div>الأصفر: <span id="yellowScore">0</span></div>
+            <div class="score-box">Red: <span id="redScore">0</span></div>
+            <div class="score-box">Yellow: <span id="yellowScore">0</span></div>
         </div>
     </div>
     <script src="script.js"></script>
